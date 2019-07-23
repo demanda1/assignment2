@@ -21,22 +21,24 @@ function getitems(){
             num++
             rows += `<tr>
                         <td id="name${j}">${u.name}</td>
-                        <td id="des${j}>${u.description}</td>
-                        <td id="quant${j}"><input type="button" value="-" id="btn${j}" onclick="change('dec',${j},${parseInt(u.price)},${u.total})"><span id="quantity${j}">${u.quantity}</span><input type="button" value="+" onclick="change('inc',${j},${u.price},${u.total})"></td>
+                        <td id="des${j}">${u.description}</td>
+                        <td id="quant${j}"><input type="button" class="btn btn-warning" value="-" id="btn${j}" onclick="change('dec',${j},${parseInt(u.price)},${u.total})"><span id="quantity${j}">${u.quantity}</span><input type="button" class="btn btn-warning" value="+" onclick="change('inc',${j},${u.price},${u.total})"></td>
                         <td id="price${j}">${parseInt(u.price)}</td>
                         <td id="total${j}">${parseInt(u.price)*parseInt(u.quantity)}</td>
                         
                     </tr>`
         });
-        const table = `<table><tr>
+        const table = `<div class="container">
+                        <table class="table table-bordered"><tr>
                        <th>Product Name</th>
                         <th>Description</th>
                         <th>Quantity</th>
                         <th>Price</th>
                         <th>Total Price</th>
-                        <th></th>
                         </tr> ${rows}
-                        </table>`
+                        <tr><td colspan="4" align="right">TOTAL AMOUNT :</td><td id="finalprice" align="right"></td></tr>
+                        </table>
+                        </div>`
     
         document.getElementById("cartlist").innerHTML=table
     }

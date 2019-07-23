@@ -17,10 +17,10 @@ function createList(data){
                     <td>${u.name}</td>
                     <td>${u.description}</td>
                     <td>${u.price}</td>
-                    <td><input type="button" value="Buy" id="button" onclick="addToCart(${j})"></td>
+                    <td><input type="button" class="btn btn-success" value="Buy" id="button" onclick="addToCart(${j})"></td>
                 </tr>`
     });
-    const table = `<table><tr>
+    const table = `<table class="table table-bordered"><tr>
                     <th>ID</th>
                    <th>Product Name</th>
                     <th>Description</th>
