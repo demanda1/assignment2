@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Amazon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="myscript.js"></script>
+  <link rel="stylesheet" href="indexstyle.css" type="text/css"></style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50"  onload="getitems()">
+
+<nav class="navbar " style="background-color: skyblue">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h3>AMAZON</h3>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right" style="padding-top: 20px;">
+        <li><div class="bg"><input type="text" name="search" id="search"></div></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">ITEMS
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="laptops.html">Electronics</a></li>
+            <li><a href="#">Toys</a></li>
+            <li><a href="#">Furniture</a></li>
+            <li><a href="#">Clothes</a></li>
+          </ul>
+        </li>
+          </span></a></li>
+        <li><a href="./cart/cartpage.html">CART<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+        <li><div id="itemnumber"></div></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- List Items-->
+<div class="owl-carousel owl-theme" style="display:block" id="list">
+
+</div>
