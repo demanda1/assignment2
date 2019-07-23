@@ -1,1 +1,4 @@
-undefined
+"item"+i+"Name of item =" + phillips trimmer C003+
+                         "price =" + 700+
+                         "Quantity="+ 1+
+                         "Total Amount="+ 700

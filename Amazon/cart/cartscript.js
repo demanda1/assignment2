@@ -93,7 +93,7 @@ function getitems(){
             })
             .then(res=>res.json())
             .then(res=>{
-                console.log("gggg")
+                alert("Mail Invoice/Bill has been sent to you")
             })
         })
 

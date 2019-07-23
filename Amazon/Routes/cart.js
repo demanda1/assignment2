@@ -19,7 +19,7 @@ server.post('/mail',(req,res)=>{
     console.log("reached")
     console.log(req.body);
     res.json({
-         data : cartService.mail(req.body.maildata)
+         data : cartService.mail(req.body)
     })
 })
 

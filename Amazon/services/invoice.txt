@@ -1,0 +1,11 @@
+item 1 Name of item = phillips trimmer B002
+                          price = 600
+                          Quantity= 1
+                          Total Amount= 1300
+                          ==================================
+                          ==================================item 2 Name of item = Sony Earphones B222
+                          price = 700
+                          Quantity= 1
+                          Total Amount= 1300
+                          ==================================
+                          ==================================

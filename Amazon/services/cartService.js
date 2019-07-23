@@ -38,7 +38,7 @@ class ItemServices{
     }
 
     mail(data){
-        console.log(data)
+        console.log(data.items)
         let checkObj ={
             subject : "Your Bill",
             body : `<div>Dear <b>user</b></div>

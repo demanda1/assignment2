@@ -38,11 +38,24 @@ class Email {
         if(userObj.from == null){
             userObj.from = "ibmtechtraining007@gmail.com";
         }
-        fs.writeFile("./invoice.txt", JSON.stringify(data), (err) => {
+        let invoicedata=""
+        let i=0;
+        data.items.forEach((u)=>{
+            i++
+            invoicedata+=`item ${i} Name of item = ${u.name}
+                          price = ${u.price}
+                          Quantity= ${u.quantity}
+                          Total Amount= ${u.finalprice}
+                          ==================================
+                          ==================================`
+
+        })
+        fs.writeFile("./services/invoice.txt", invoicedata, (err) => {
             if (err) {
                 console.error(err);
                 return;
             };
+            console.log(__dirname)
             console.log("File has been created");
         })
         this.mailer.sendMail({
@@ -53,7 +66,7 @@ class Email {
             html : userObj.body,
             attachments: [
                 {
-                    filename : 'hello.txt',
+                    filename : 'invoice.txt',
                     path : __dirname +'/' +'invoice.txt'
                     /*,content: 'Hello how r u' */
                 }
