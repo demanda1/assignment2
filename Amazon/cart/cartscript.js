@@ -5,6 +5,12 @@ function getitems(){
         url="http://localhost:1234/cartlist"
         fetch(url).then(res=>res.json()).then(cart=>{
             createList(cart)
+            console.log(cart.cart.length)
+            for(i=1;i<=cart.cart.length;i++){
+                finalprice+=parseInt(document.getElementById(`total${i}`).innerText)
+            }
+            console.log(finalprice)
+            document.getElementById('finalprice').innerText=finalprice
         })
     }
     
