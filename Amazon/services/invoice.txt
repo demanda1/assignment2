@@ -1,16 +1,17 @@
 item 1 Name of item = phillips trimmer A001
                           price = 500
                           Quantity= 4
-                          Total Amount= 5400
-                          ==================================
-                          ==================================item 2 Name of item = Sony Earphones B222
+                          Total Amount= 25000==================================
+                          ==============================================================item 2 Name of item = phillips trimmer B002
+                          price = 600
+                          Quantity= 2
+                          Total Amount= 25000==================================
+                          ==============================================================item 3 Name of item = Sony Earphones B222
                           price = 700
-                          Quantity= 2
-                          Total Amount= 5400
-                          ==================================
-                          ==================================item 3 Name of item = Skullcandy Earphones C333
+                          Quantity= 3
+                          Total Amount= 25000==================================
+                          ==============================================================item 4 Name of item = Skullcandy Earphones C333
                           price = 1000
-                          Quantity= 2
-                          Total Amount= 5400
-                          ==================================
-                          ==================================
+                          Quantity= 3
+                          Total Amount= 25000==================================
+                          ==============================================================

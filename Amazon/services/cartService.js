@@ -21,9 +21,9 @@ class ItemServices{
                 let newcategory=u.category
                 let newdes=u.description
                 let newprice=u.price
-                let newquantity=1
+                let newquantity=u.quantity
                 let tempdata={
-                    id:1,
+                    id:newid,
                     name: newname,
                     category: newcategory ,
                     description: newdes,
@@ -31,14 +31,12 @@ class ItemServices{
                     price:newprice
                     }
                 cartitems.push(tempdata)
-                console.log(cartitems)
                 console.log("Added succesfully")
             }
         })
     }
 
     mail(data){
-        console.log(data.items)
         let checkObj ={
             subject : "Your Bill",
             body : `<div>Dear <b>user</b></div>
@@ -48,6 +46,27 @@ class ItemServices{
             to : "deepakm8796@gmail.com"
         }
         emailService.emailWithAttachment(checkObj,data);
+    }
+
+    update(){
+        cartitems.forEach((u)=>{
+            electronicitems.forEach((m)=>{
+                if(u.id==m.id){
+                    m.quantity=m.quantity-u.quantity
+                }
+            })
+        })
+    }
+
+    inventory(data){
+       data.items.forEach((u)=>{
+           electronicitems.forEach((m)=>{
+               if(u.name==m.name){
+                   m.quantity=m.quantity-u.quantity
+               }
+           })
+       })
+       console.log(electronicitems)
     }
 }
 

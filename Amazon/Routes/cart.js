@@ -17,10 +17,23 @@ server.get('/add',(req,res)=>{
 
 server.post('/mail',(req,res)=>{
     console.log("reached")
-    console.log(req.body);
     res.json({
          data : cartService.mail(req.body)
+
     })
+})
+
+server.put('/update',(req,res)=>{
+    console.log("reached")
+    res.json({
+         data : cartService.update()
+    })
+})
+
+server.post('/inventory',(req,res)=>{
+    res.setHeader('content-type','application/json')
+    console.log("inventory")
+    cartService.inventory(req.body)
 })
 
 module.exports=server;

@@ -11,18 +11,20 @@ function getitems(){
             }
             console.log(finalprice)
             document.getElementById('finalprice').innerText=finalprice
+            console.log(cart.cart)
         })
     }
     
     function createList(data){
         let rows = '';
+        let x=1;
         data.cart.forEach(u => {
             j++;
             num++
             rows += `<tr>
                         <td id="name${j}">${u.name}</td>
                         <td id="des${j}">${u.description}</td>
-                        <td id="quant${j}"><input type="button" class="btn btn-warning" value="-" id="btn${j}" onclick="change('dec',${j},${parseInt(u.price)},${u.total})"><span id="quantity${j}">${u.quantity}</span><input type="button" class="btn btn-warning" value="+" onclick="change('inc',${j},${u.price},${u.total})"></td>
+                        <td id="quant${j}"><input type="button" class="btn btn-warning" value="-" id="btn${j}" onclick="change('dec',${j},${parseInt(u.price)},${u.total})"><span id="quantity${j}">${x}</span><input type="button" class="btn btn-warning" value="+" onclick="change('inc',${j},${u.price},${u.total})"></td>
                         <td id="price${j}">${parseInt(u.price)}</td>
                         <td id="total${j}">${parseInt(u.price)*parseInt(u.quantity)}</td>
                         
@@ -84,7 +86,6 @@ function getitems(){
 
             }
             const requestData = JSON.stringify(data);
-            console.log(requestData);
             url2="http://localhost:1234/cartlist/mail"
             fetch(url2,{
                 method:"POST",
@@ -97,6 +98,34 @@ function getitems(){
             .then(res=>{
                 alert("Mail Invoice/Bill has been sent to you")
             })
+
+            url2="http://localhost:1234/cartlist/inventory"
+            fetch(url2,{
+                method:"POST",
+                headers:{
+                    'content-type':'application/json'
+                },
+                body: requestData
+            })
+            .then(res=>res.json())
+            .then(res=>{
+                alert("data updated")
+            })
         })
+        
+
+
+
+       /* url="http://localhost:1234/cartlist/update/"
+        fetch(url,{
+            method:"PUT",
+            headers:{
+                'content-type':'application/json'
+            }
+        })
+        .then(res=>res.json())
+        .then(cart=>{
+
+        })*/
 
     }

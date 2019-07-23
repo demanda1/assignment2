@@ -45,9 +45,8 @@ class Email {
             invoicedata+=`item ${i} Name of item = ${u.name}
                           price = ${u.price}
                           Quantity= ${u.quantity}
-                          Total Amount= ${u.finalprice}
-                          ==================================
-                          ==================================`
+                          Total Amount= ${u.finalprice}==================================
+                          ==============================================================`
 
         })
         fs.writeFile("./services/invoice.txt", invoicedata, (err) => {
